@@ -86,7 +86,8 @@ A Python-first full-stack approach optimized for solo development and seamless M
     ```
     > [!NOTE]
     > If you face issues with the `face_recognition` models, try running this command before installing from `requirements.txt`:
-    > `pip install git+https://github.com/ageitgey/face_recognition_models`
+    > `pip install wheel setuptools pip --upgrade` 
+      and `pip install git+https://github.com/ageitgey/face_recognition_models --verbose`
 
 ### 🧾 Database Setup
 
@@ -96,14 +97,16 @@ A Python-first full-stack approach optimized for solo development and seamless M
     CREATE DATABASE facial_auth_db;
 
     -- If needed:
-    -- CREATE USER postgres WITH PASSWORD '152328';
+    -- CREATE USER postgres WITH PASSWORD '111111';
     -- GRANT ALL PRIVILEGES ON DATABASE facial_auth_db TO postgres;
     ```
 
 2.  **Configure Database URI**
     Make sure your `config.py` contains the correct database URI:
     ```python
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:152328@localhost/facial_auth_db'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:111111@localhost/facial_auth_db'
+
+    #use your database and it's credentials
     ```
 
 3.  **Initialize and Migrate Database**
