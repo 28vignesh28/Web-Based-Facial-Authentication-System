@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Facial Authentication</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Register New User</h1>
+        <div id="feedback"></div>
+        <video id="video" width="640" height="480" autoplay></video>
+        <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+        <div class="controls">
+            <input type="text" id="username" placeholder="Enter your username">
+            <button id="register-button">Register with Face</button>
+        </div>
+        <p>Already have an account? <a href="/">Login here</a>.</p>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
